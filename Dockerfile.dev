@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+COPY ./target/GroceryBookingApp.jar /GroceryBookingApp.jar
+ENTRYPOINT exec java -cp GroceryBookingApp.jar -Dloader.main=com.ps.nextgen.GroceryBookingApplication org.springframework.boot.loader.PropertiesLauncher --spring.profiles.active=dev
